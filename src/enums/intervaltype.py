@@ -1,0 +1,7 @@
+class IntervalType:
+    LESSON = 0
+    LITTLE_CHANGE = 1
+    MIDDLE_CHANGE = 2
+    BIG_CHANGE = 3
+    CONVERSATIONS = 4
+    LESSON_CHANGE = 5
