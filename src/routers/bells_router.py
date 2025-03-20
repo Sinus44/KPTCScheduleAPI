@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 
 from src.http_exceptions import InvalidParameterException
-from src.schemes.list_bell_blocks_response import ListBellBlocksResponse
 from src.schemes.bell_response import BellResponse
 from src.schemes.exception_response import ExceptionResponse
+from src.schemes.list_bell_blocks_response import ListBellBlocksResponse
 from src.services.bell_service import BellService
 from src.validator import validate_weekday_index
 

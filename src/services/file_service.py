@@ -25,6 +25,7 @@ class FileService:
 
     def get_file_by_date(self, date) -> File | None:
         files = self.get_available_files()
+        date = ".".join(map(str, map(int, date.split("."))))
         file = [file for file in files if file.date == date]
 
         if len(file) > 0:

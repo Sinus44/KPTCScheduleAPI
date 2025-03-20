@@ -12,7 +12,8 @@ from src.schemes.exception_response import ExceptionResponse
 from src.schemes.file_update_id_response import UpdateIdResponse
 from src.schemes.file_updates_response import FileUpdatesResponse
 from src.schemes.schedule_updates_response import ScheduleUpdatesResponse
-from src.services.database_service import get_last_file_update_id, get_file_updates_by_offset, get_last_schedule_update_id, get_schedule_updates_by_offset
+from src.services.database_service import get_last_file_update_id, get_file_updates_by_offset, \
+    get_last_schedule_update_id, get_schedule_updates_by_offset
 from src.services.file_update_service import UpdateService
 
 file_update_controller = UpdateService(file_controller, schedule_controller, FILE_UPDATE_CONFIG["update_time_sec"])

@@ -11,4 +11,3 @@ FILE_CONTROLLER_CONFIG = {
 FILE_UPDATE_CONFIG = {
     "update_time_sec": 120
 }
-

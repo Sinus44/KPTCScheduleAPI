@@ -106,7 +106,6 @@ def schedule_get_by_date(date: str, group_name: str = None) -> ScheduleResponse:
 
     return schedule.to_scheme()
 
-
 # @schedule_router.get("/getByDates", summary="Получить расписание по списку дат")
 # def schedule_get_by_dates(dates: str):
 #     dates = validate_dates(dates)
@@ -162,4 +161,3 @@ def schedule_get_by_date(date: str, group_name: str = None) -> ScheduleResponse:
 #
 #     return SchedulesResponse(schedule=[schedule.serialize() for schedule in schedules])
 #
-

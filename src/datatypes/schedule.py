@@ -13,4 +13,3 @@ class Schedule:
 
     def to_scheme(self):
         return ScheduleResponse(file=self.file.to_scheme(), groups=[group.to_scheme() for group in self.groups])
-

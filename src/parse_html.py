@@ -189,7 +189,8 @@ def parse_html(file_id):
 
             # Создаем экземпляр занятия
             parsed_lesson = Lesson()
-            parsed_lesson.index = int(lesson[0]) if lesson[0] and lesson[0].isdigit else parsed_group.lessons[-1].index + 1
+            parsed_lesson.index = int(lesson[0]) if lesson[0] and lesson[0].isdigit else parsed_group.lessons[
+                                                                                             -1].index + 1
 
             parsed_lesson.discipline = time_parser(discipline)
             parsed_lesson.classroom_raw = remove_repeats(lesson[2].replace("—", "-"), "-")

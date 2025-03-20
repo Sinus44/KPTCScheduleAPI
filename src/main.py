@@ -1,5 +1,6 @@
 import logging
 import logging.config
+import logging.handlers
 import threading
 
 import colorama
@@ -35,7 +36,8 @@ api.include_router(callback_router)
 def main():
     logging.config.fileConfig("./src/log_config.ini")
     threading.Thread(target=file_update_controller.start, daemon=True).start()
-    uvicorn.run("src.main:api", host=API_CONFIG["host"], port=API_CONFIG["port"], workers=1, log_config="./src/log_config.ini")
+    uvicorn.run("src.main:api", host=API_CONFIG["host"], port=API_CONFIG["port"], workers=1,
+                log_config="./src/log_config.ini")
 
 
 if __name__ == "__main__":

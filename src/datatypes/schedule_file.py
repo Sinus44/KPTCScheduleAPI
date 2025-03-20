@@ -22,7 +22,8 @@ class File:
                             weekday_name=get_weekday_name_by_index(self.weekday_index))
 
     def serialize(self):
-        return FileResponse(last_update=self.last_update, name=self.name, date=self.serialize_date(), id=self.id, is_actual=self.is_actual)
+        return FileResponse(last_update=self.last_update, name=self.name, date=self.serialize_date(), id=self.id,
+                            is_actual=self.is_actual)
 
     def date_to_scheme(self):
         day, month, year = list(map(int, self.date.split(".")))
@@ -30,5 +31,5 @@ class File:
                             weekday_name=get_weekday_name_by_index(self.weekday_index))
 
     def to_scheme(self):
-        return FileResponse(last_update=self.last_update, name=self.name, date=self.date_to_scheme(), id=self.id, is_actual=self.is_actual)
-
+        return FileResponse(last_update=self.last_update, name=self.name, date=self.date_to_scheme(), id=self.id,
+                            is_actual=self.is_actual)

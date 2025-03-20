@@ -2,6 +2,8 @@ from fastapi import APIRouter
 
 import src.config as config
 from src.http_exceptions import FileNotFoundException, InvalidParameterException
+from src.schemes.actual_dates_response import ActualDatesResponse
+from src.schemes.available_dates_response import AvailableDatesResponse
 from src.schemes.exception_response import ExceptionResponse
 from src.schemes.file_response import FileResponse
 from src.schemes.files_response import FilesResponse
@@ -10,6 +12,18 @@ from src.validator import validate_file_id, validate_date
 
 file_controller = FileService(config.FILE_CONTROLLER_CONFIG.get("folder_id"))
 file_router = APIRouter(prefix="/file", tags=["file"])
+
+
+@file_router.get("/getAvailableDates", summary="Получить все доступные даты")
+def file_get_available_dates() -> AvailableDatesResponse:
+    return AvailableDatesResponse(available_dates=[file.serialize_date()
+                                                   for file in file_controller.get_available_files()])
+
+
+@file_router.get("/getActualDates", summary="Получить все доступные даты")
+def file_get_available_dates() -> ActualDatesResponse:
+    return ActualDatesResponse(actual_dates=[file.serialize_date()
+                                             for file in file_controller.get_actual_files()])
 
 
 @file_router.get("/getAll", summary="Получить все файлы")
