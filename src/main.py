@@ -23,7 +23,7 @@ api = FastAPI(
     title="KPTC Schedule API",
     description="API for getting schedule",
     version="1.1",
-    root_path="/v1"
+    root_path="."
 )
 
 api.include_router(general_router)
